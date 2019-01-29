@@ -17,7 +17,7 @@ buildscript {
     }
 }
 
-version "1.6.0-RC6"
+version "1.6.0-FINAL"
 group "streama"
 
 
@@ -99,6 +99,7 @@ dependencies {
     compile "org.grails.plugins:mail:2.0.0.RC4"
     compile "org.grails.plugins:grails-spring-websocket:2.3.0"
     compile group: 'eu.bitwalker', name: 'UserAgentUtils', version: '1.20'
+<<<<<<< HEAD
     runtime 'mysql:mysql-connector-java:5.1.36'
     //compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
     runtime 'org.postgresql:postgresql:42.2.3'
@@ -106,6 +107,9 @@ dependencies {
     //compile 'org.grails.plugins:postgresql-extensions:5.2.0'
     //provided 'org.postgresql:postgresql:42.1.4'
 
+=======
+    runtime 'mysql:mysql-connector-java:8.0.12'
+>>>>>>> 5623f5b3c6bee738f6ef5e239c04f6ed38848c01
 }
 
 task wrapper(type: Wrapper) {
@@ -158,3 +162,6 @@ bootRun {
 	}
 }
 
+grails {
+  pathingJar = true
+}

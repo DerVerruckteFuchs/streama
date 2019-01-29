@@ -28,6 +28,10 @@ angular.module('streama').controller('settingsUsersCtrl', ['$scope', 'apiService
   };
 
   $scope.openUserCreateModal = function (user) {
+    if(user==null){
+      user = {}
+      user.language = "en";
+    }
     modalService.userCreateModal(user, function (data) {
       if(!_.find($scope.users, {id: data.id})){
         $scope.users.push(data);
@@ -82,5 +86,8 @@ angular.module('streama').controller('settingsUsersCtrl', ['$scope', 'apiService
 		return _.find(user.authorities, {authority: 'ROLE_CONTENT_MANAGER'});
 	};
 
+  $scope.isTrustedUser = function (user) {
+    return _.find(user.authorities, {authority: 'ROLE_TRUSTED_USER'});
+  };
 
 }]);
